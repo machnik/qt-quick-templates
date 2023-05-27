@@ -19,7 +19,5 @@ add_executable(HelloQML
   resources.qrc
 )
 
-target_compile_definitions(HelloQML
-  PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(HelloQML
   PRIVATE Qt6::Core Qt6::Quick)
