@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>QML/main.qml</file>
+        <file>QML/Tabs/Tab1.qml</file>
+        <file>QML/Tabs/Tab2.qml</file>
+        <file>QML/Tabs/Tab3.qml</file>
+        <file>QML/Tabs/Tab4.qml</file>
+        <file>QML/Tabs/Tab5.qml</file>
+    </qresource>
+</RCC>
