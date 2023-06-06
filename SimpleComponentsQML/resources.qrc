@@ -6,5 +6,6 @@
         <file>QML/Tabs/Tab3.qml</file>
         <file>QML/Tabs/Tab4.qml</file>
         <file>QML/Tabs/Tab5.qml</file>
+        <file>images/example.jpg</file>
     </qresource>
 </RCC>

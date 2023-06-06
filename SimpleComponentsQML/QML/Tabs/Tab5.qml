@@ -3,7 +3,9 @@ import QtQuick
 Rectangle {
     color: "blue"
     Text {
-        text: "Tab 5 Content"
+        text: "Text Inputs and raw Key Events"
         anchors.centerIn: parent
     }
+
+    // TODO: Text inputs and raw keypress handling.
 }

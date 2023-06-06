@@ -3,7 +3,9 @@ import QtQuick
 Rectangle {
     color: "green"
     Text {
-        text: "Tab 3 Content"
+        text: "Custom Button Component"
         anchors.centerIn: parent
     }
+
+    // TODO: Using custom button component.
 }
