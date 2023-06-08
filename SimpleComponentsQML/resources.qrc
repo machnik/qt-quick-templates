@@ -6,6 +6,11 @@
         <file>QML/Tabs/Tab3.qml</file>
         <file>QML/Tabs/Tab4.qml</file>
         <file>QML/Tabs/Tab5.qml</file>
+        <file>QML/Components/ClickableImage.qml</file>
+        <file>QML/Components/SimpleButton.qml</file>
+        <file>QML/Components/SimpleLineEdit.qml</file>
+        <file>QML/Components/SimpleTextEdit.qml</file>
         <file>images/example.jpg</file>
+        <file>images/wheel.png</file>
     </qresource>
 </RCC>

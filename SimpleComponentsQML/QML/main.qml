@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Window
 
-import "Tabs"
+import "qrc:/QML/Tabs"
 
 Window {
     width: 800
