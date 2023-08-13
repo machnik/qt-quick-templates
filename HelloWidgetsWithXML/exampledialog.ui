@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>ExampleDialog</class>
+    <widget class="QDialog" name="ExampleDialog">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>400</width>
+                <height>300</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Example Dialog</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+                <widget class="QLabel" name="m_label">
+                    <property name="text">
+                        <string>Hello from the Example Dialog!</string>
+                    </property>
+                </widget>
+            </item>
+            <item>
+                <widget class="QLineEdit" name="m_lineEdit" />
+            </item>
+            <item>
+                <widget class="QPushButton" name="m_button">
+                    <property name="text">
+                        <string>Close Dialog</string>
+                    </property>
+                </widget>
+            </item>
+        </layout>
+    </widget>
+    <resources />
+    <connections />
+</ui>
+
