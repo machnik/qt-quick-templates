@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>src_qml/main.qml</file>
+        <file>src_qml/ExampleWindow.qml</file>
+        <file>media/image.jpg</file>
+    </qresource>
+</RCC>
