@@ -13,6 +13,8 @@ ApplicationWindow {
     height: 250
     title: "QtQuickCppTemplate"
 
+    property string exampleWindowQML: "ExampleWindow.qml"
+
     ColumnLayout {
 
         anchors.fill: parent
@@ -110,7 +112,7 @@ ApplicationWindow {
 
             onClicked: {
 
-                var component = Qt.createComponent("ExampleWindow.qml");
+                var component = Qt.createComponent(exampleWindowQML);
 
                 if (component.status == Component.Ready) {
                     var window = component.createObject(root);

@@ -5,7 +5,7 @@ import QtQuick.Layouts
 
 ApplicationWindow {
 
-    width: 600
+    width: 640
     height: 700
     visible: true
     title: "Example Window"
@@ -15,7 +15,11 @@ ApplicationWindow {
         anchors.fill: parent
         anchors.margins: 10
 
-        RowLayout {
+        GridLayout {
+
+            columns: 5
+            rowSpacing: 10
+            columnSpacing: 10
 
             Button {
                 text: "Click me!"
@@ -41,9 +45,6 @@ ApplicationWindow {
             CheckBox {
                 text: "Check Me!"
             }
-        }
-
-        RowLayout {
 
             ToolButton {
                 text: "Tool Button"
