@@ -9,13 +9,15 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH "/home/user/Qt/6.5.0/gcc_64")
+set(CMAKE_PREFIX_PATH "/home/user/qt")
 
 find_package(QT NAMES Qt6 COMPONENTS Core Quick REQUIRED)
 find_package(Qt6 COMPONENTS Core Quick REQUIRED)
 
 add_executable(QtQuickCppTemplate
   src_cpp/main.cpp
+  src_cpp/BackendUtils.h
+  src_cpp/BackendUtils.cpp
   src_cpp/ExampleButtonActions.h
   src_cpp/ExampleButtonActions.cpp
   src_cpp/ExampleListModel.cpp
@@ -27,3 +29,4 @@ target_compile_definitions(QtQuickCppTemplate
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(QtQuickCppTemplate
   PRIVATE Qt6::Core Qt6::Quick)
+

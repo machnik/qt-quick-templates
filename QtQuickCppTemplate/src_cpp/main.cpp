@@ -2,6 +2,7 @@
 #include <QtQml/QQmlApplicationEngine>
 #include <QtQml/QQmlContext>
 
+#include "BackendUtils.h"
 #include "ExampleButtonActions.h"
 #include "ExampleListModel.h"
 
@@ -10,6 +11,11 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    BackendUtils backendUtils;
+    qmlRegisterSingletonInstance<BackendUtils>(
+        "QtQuickCppTemplate.Backend", 1, 0, "BackendUtils", &backendUtils
+    );
 
     ExampleListModel exampleListModel;
     engine.rootContext()->setContextProperty("exampleListModel", &exampleListModel);

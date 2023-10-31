@@ -5,15 +5,26 @@ import QtQuick.Layouts
 
 ApplicationWindow {
 
-    width: 640
-    height: 700
-    visible: true
     title: "Example Window"
+
+    visible: true
+
+    property int defaultMargin: 10
+    
+    Component.onCompleted: {
+        width = mainLayout.implicitWidth + 2 * defaultMargin
+        height = mainLayout.implicitHeight + 2 * defaultMargin
+    }
+
+    minimumWidth: mainLayout.implicitWidth + 2 * defaultMargin
+    minimumHeight: mainLayout.implicitHeight + 2 * defaultMargin
 
     ColumnLayout {
 
+        id: mainLayout
+
         anchors.fill: parent
-        anchors.margins: 10
+        anchors.margins: defaultMargin
 
         GridLayout {
 

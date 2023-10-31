@@ -7,18 +7,99 @@ import QtQuickCppTemplate.Backend 1.0
 ApplicationWindow {
 
     id: root
-
-    visible: true
-    width: 300
-    height: 250
     title: "QtQuickCppTemplate"
 
-    property string exampleWindowQML: "ExampleWindow.qml"
+    visible: true
+
+    width: 300
+    height: 300
+    
+    minimumWidth: 300
+    minimumHeight: 300
+
+    function resetInputField(inputField) {
+        inputField.text = "Text set using QML+JS.";
+    }
+
+    ExampleButtonActions {
+        id: exampleButtonActions
+    }
+
+    Component {
+        id: exampleWindowComponent
+        ExampleWindow {}
+    }
+
+    menuBar: MenuBar {
+
+        Menu {
+
+            title: qsTr("Application")
+
+            MenuItem {
+                text: qsTr("Exit")
+                onTriggered: Qt.quit();
+            }
+        }
+
+        Menu {
+
+            title: qsTr("Actions")
+
+            MenuItem {
+
+                text: qsTr("Set Input Field using QML+JS")
+
+                onTriggered: {
+                    resetInputField(textField);
+                }
+            }
+
+            MenuItem {
+
+                text: qsTr("Reset Input Field using C++")
+
+                onTriggered: {
+                    exampleButtonActions.resetInputField(textField);
+                }
+            }
+
+            MenuSeparator {}
+
+            MenuItem {
+
+                text: qsTr("Open Example Window")
+
+                onTriggered: {
+                    var exampleWindow = exampleWindowComponent.createObject(root);
+                    exampleWindow.show();
+                }
+            }
+
+            MenuSeparator {}
+
+            MenuItem {
+
+                text: qsTr("Open Web Browser")
+
+                onTriggered: {
+                    BackendUtils.openWebBrowser("https://www.qt.io/");
+                }
+            }
+        }
+    }
 
     ColumnLayout {
 
         anchors.fill: parent
         anchors.margins: 10
+
+        Text {
+            text: qsTr("Simple List Views:")
+            font.pixelSize: 22
+            font.weight: Font.Bold
+            color: "#006400"
+        }
 
         RowLayout {
 
@@ -77,12 +158,8 @@ ApplicationWindow {
                 Layout.fillWidth: true
 
                 onClicked: {
-                    textField.text = "Text set using QML+JS.";
+                    resetInputField(textField);
                 }
-            }
-
-            ExampleButtonActions {
-                id: exampleButtonActions
             }
 
             Button {
@@ -101,7 +178,7 @@ ApplicationWindow {
 
             Layout.fillWidth: true
             height: 10
-            color: "#00000000"
+            color: "#00000000" // transparent
         }
 
         Button {
@@ -111,15 +188,8 @@ ApplicationWindow {
             Layout.fillWidth: true
 
             onClicked: {
-
-                var component = Qt.createComponent(exampleWindowQML);
-
-                if (component.status == Component.Ready) {
-                    var window = component.createObject(root);
-                    window.show();
-                } else {
-                    console.log("Error loading component:", component.errorString());
-                }
+                var exampleWindow = exampleWindowComponent.createObject(root);
+                exampleWindow.show();
             }
         }
     }
